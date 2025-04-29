@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Poisson's Distribution Curve Visualizer</title>
+</head>
+<body>
+    <div class="flex flex-col min-h-screen">
+        <h1 class="text-3xl font-bold text-center mt-10 mb-6 px-4"> Poisson's Distribution Curve Visualizer</h1>
+        <div id="chart-main2" class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-64 sm:h-screen flex items-center justify-center">
+            <canvas id="chart" class="w-full h-full" style="border:3px solid red"></canvas>
+        </div>
+
+        <div class = "flex items-center justify-center mt-10">
+            <h2 class = "text-2xl font-bold mt-10 mb-6 px-4">Instructions</h2>
+        
+        </div>
+
+        <div class = "flex items-center justify-center ml-20 mr-20">
+            <p class = "font-italics px-2">Adjust the values of mean to observe the changes in Poisson's Distribution Curve.</p>
+        </div>
+
+        <div class = "flex items-center justify-center mt-10 ml-20 mr-20">
+            <label for = "mean" class = "ml-0"> Mean [μ]</label>
+            <input type = "range" min = "0" max = "100" value = "1" id = "mean" class = "ml-0 border border-black-300"
+            oninput = "document.getElementById('meanVal').innerHTML = this.value; update_graph1(document.getElementById('xVal').value, this.value)">
+            <span id = "meanVal">1</span>
+
+        </div>
+
+        <div class = "flex items-center justify-center mt-10 ml-20 mr-20">
+            <label for = "xVal" class = "ml-0">Values of X-Axis (from 0 to __?)</label>
+            <input type = "range" min = "1" max = "120" value = "10" id = "xVal" class = "ml-0 border border-black-300"
+            oninput = "document.getElementById('xVal1').innerHTML = this.value; update_graph1(this.value, document.getElementById('mean').value);">
+            <span id = "xVal1">10</span>
+        </div>
+        
+    </div>
+
+    <footer class="bg-white rounded-lg shadow-sm m-4 dark:bg-blue-700 mt-20">
+        <div class="w-full mx-auto max-w-screen-xl p-4 flex flex-col items-center justify-center gap-5">
+          <span class="text-sm text-white-700 sm:text-center dark:text-white-400">© 2025 <a href="https://github.com/reyan-k-sapkota" class="hover:underline">Reyan Kumar Sapkota</a>. 
+        </span>
+        <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-white-500 text-white-400 sm:mt-0">
+            <li>
+                <a href="https://github.com/reyan-k-sapkota" class="hover:underline me-4 md:me-6" target = "_blank">Github</a>
+            </li>
+            <li>
+                <a href="https://linkedin.com/in/reyan-k-sapkota/" class="hover:underline me-4 md:me-6" target = "_blank">Linkedin</a>
+            </li>
+            <li>
+                <a href="https://instagram.com/reyan.k.sapkota/" class="hover:underline me-4 md:me-6" target = "_blank">Instagram</a>
+            </li>
+            <li>
+                <a href="mailto:reyansapkota.108@gmail.com" class="hover:underline">Email</a>
+            </li>
+        </ul>
+        </div>
+    </footer>
+
+    <script src = "canvas.js"></script>
+    
+</body>
+</html>
